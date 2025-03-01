@@ -1,3 +1,4 @@
+// Code assumes R0 is loaded with 8192
 // filler = 0
 @filler
 M=0

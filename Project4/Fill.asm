@@ -1,27 +1,45 @@
-// Code assumes R0 is loaded with 8192
-// filler = 0
+// Load R0 with 8192
+@8192
+D=A
+@R0
+M=D
+//	filler = 0
 @filler
 M=0
-// loop
+//	while(true) {
 (LOOP)
-//	if(key pressed)
+//		if(kbd != 0)
 @KBD
 D=M
+//			newFiller = -1
 @DARKFILL
 D;JNE
+//		else
+//			newFiller = 0
 @WHITEFILL
 D;JEQ
-//	 filler = -1
 (DARKFILL)
-@filler
+@newFiller
 M=-1
-@FILLSCREEN
+@COMPARE
 0;JMP
-//	 filler = 0
 (WHITEFILL)
-@filler
+@newFiller
 M=0
-//	Fill the screen
+(COMPARE)
+@newFiller
+D=M
+@filler
+D=D-M
+//		if(newFiller == filler) goto loop
+@LOOP
+D;JEQ
+//		filler = newFiller
+@newFiller
+D=M
+@filler
+M=D
+//		fillscreen()
 (FILLSCREEN)
 // i = 0
 @i

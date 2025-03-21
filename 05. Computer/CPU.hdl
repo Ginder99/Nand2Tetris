@@ -32,29 +32,32 @@ CHIP CPU {
         pc[15];          // address of next instruction
 
     PARTS:
+    // A or C Instruction ?
     DMux(in= true, sel= instruction[15], a= isA, b= isC);
+    // Should load ARegister ?
     Or(a= isA, b= instruction[5], out= loadA);
+    // Should load DRegister ?
     And(a= isC, b= instruction[4], out= loadD);
+    // ARegister input
     Mux16(a= aluOut, b= instruction, sel= isA, out= aIn);
-    ARegister(in= aIn, load= loadA, out= aOut,
-        out[0..14]= addressM);
+    ARegister(in= aIn, load= loadA, out= aOut, out[0..14]= addressM);
     DRegister(in= aluOut, load= loadD, out= dOut);
-    Mux16(a= aOut, b= inM,
-        sel= instruction[12], out= aOrM);
-    ALU(x= dOut, y= aOrM, zx= instruction[11],
-        nx= instruction[10], zy= instruction[9],
-        ny= instruction[8], f= instruction[7],
-        no= instruction[6],
-        out= aluOut, out= outM,
-        zr= isZero, ng= isNeg);
+    // Should 2nd ALU input be from A or M ?
+    Mux16(a= aOut, b= inM, sel= instruction[12], out= aOrM);
+    ALU(x= dOut, y= aOrM, zx= instruction[11], nx= instruction[10], zy= instruction[9], ny= instruction[8],
+        f= instruction[7], no= instruction[6], out= aluOut, out= outM, zr= isZero, ng= isNeg);
     And(a= isC, b= instruction[3], out= writeM);
+    // Should jump if alu output is zero ?
     And(a= isZero, b= instruction[1], out= zeroJump);
+    // Should jump if alu output is negative ?
     And(a= isNeg, b= instruction[2], out= negJump);
     Or(a= isZero, b= isNeg, out= notPos);
     Not(in= notPos, out= isPos);
+    // Should jump if alu output is Positive ?
     And(a= isPos, b= instruction[0], out= posJump);
     Or(a= negJump, b= posJump, out= jump);
     Or(a= zeroJump, b= jump, out= shouldJump);
+    // load PC based on jump decision
     And(a= shouldJump, b= isC, out= loadPC);
     PC(in= aOut, load= loadPC, inc= true, reset= reset, out[0..14]= pc);
 }

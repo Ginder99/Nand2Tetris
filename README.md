@@ -6,3 +6,4 @@ Solutions for the projects in the book "The Elements of Computing Systems" by No
 3. [RAM](03_RAM)
 4. [ASM](04_ASM)
 5. [Computer](05_Computer)
+6. [Assembler](06_Assembler)

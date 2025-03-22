@@ -24,9 +24,9 @@ javac HackAssemblerTest.java
 3. Create `input` directory in the 06_Assembler directory
 4. Place the `.asm` files in the 'input' directory
 5. Create `expected` directory in the 06_Assembler directory
-6. Place the expected output `.hack` files in the 'expected' directory
+6. Place the corresponding expected output `.hack` files in the 'expected' directory
 7. Run the below command to run the test
 ```bash
-java HackAssemblerTest <input directory path>
+java HackAssemblerTest <06_Assembler directory path>
 ```
 8. The test will compare the generated `.hack` files with the expected `.hack` files and print the result

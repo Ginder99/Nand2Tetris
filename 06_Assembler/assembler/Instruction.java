@@ -1,3 +1,5 @@
+package assembler;
+
 public abstract class Instruction {
     private final String instructionStr;
     public Instruction(String instruction) {

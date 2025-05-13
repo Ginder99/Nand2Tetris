@@ -7,11 +7,11 @@
 1. Navigate to the 06_Assembler directory
 2. Run the below command to compile HackAssembler.java
 ```bash
-javac HackAssembler.java
+javac assembler/HackAssembler.java
 ```
 4. Run the below command to run the assembler code
 ```bash
-java HackAssembler <input_file_name>.asm
+java assembler/HackAssembler <input_file_name>.asm
 ```
 4. The above command will generate a file with the same name as the input file but with .hack extension
 
@@ -19,7 +19,7 @@ java HackAssembler <input_file_name>.asm
 1. Navigate to the 06_Assembler directory
 2. Run the below command to compile HackAssemblerTest.java
 ```bash
-javac HackAssemblerTest.java
+javac assembler/HackAssemblerTest.java
 ```
 3. Create `input` directory in the 06_Assembler directory
 4. Place the `.asm` files in the 'input' directory
@@ -27,6 +27,6 @@ javac HackAssemblerTest.java
 6. Place the corresponding expected output `.hack` files in the 'expected' directory
 7. Run the below command to run the test
 ```bash
-java HackAssemblerTest <06_Assembler directory path>
+java assembler/HackAssemblerTest <06_Assembler directory path>
 ```
 8. The test will compare the generated `.hack` files with the expected `.hack` files and print the result

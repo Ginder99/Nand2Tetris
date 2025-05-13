@@ -1,3 +1,5 @@
+package assembler;
+
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -14,7 +16,7 @@ public class HackAssemblerTest {
 
     public static void main(String[] args) throws Exception {
         if (args.length != 1) {
-            System.out.println("Usage: java HackAssemblerTest <test path>");
+            System.out.println("Usage: java assembler/HackAssemblerTest <test path>");
             return;
         }
         TEST_ROOT = args[0];
@@ -57,7 +59,7 @@ public class HackAssemblerTest {
         String currentPath = System.getProperty("user.dir");
 
         // Run the Java program as a separate process
-        ProcessBuilder pb = new ProcessBuilder("java", "-cp", currentPath, "HackAssembler", inputFile.getAbsolutePath());
+        ProcessBuilder pb = new ProcessBuilder("java", "-cp", currentPath, "assembler.HackAssembler", inputFile.getAbsolutePath());
         Process process = pb.start();
 
         // Read error stream asynchronously

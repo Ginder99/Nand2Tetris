@@ -6,3 +6,6 @@ out
 06_Assembler/output
 06_Assembler/*.class
 test
+
+# Steps tracker data (user-specific)
+steps-tracker/data/steps.json

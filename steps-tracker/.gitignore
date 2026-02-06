@@ -1,0 +1,24 @@
+# Ignore dependencies
+node_modules/
+
+# Ignore data files (user-specific)
+data/steps.json
+
+# Ignore logs
+*.log
+npm-debug.log*
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Ignore build artifacts
+dist/
+build/

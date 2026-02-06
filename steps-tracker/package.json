@@ -1,0 +1,27 @@
+{
+  "name": "steps-tracker",
+  "version": "1.0.0",
+  "description": "A simple CLI application for tracking steps, tasks, and goals",
+  "main": "src/tracker.js",
+  "bin": {
+    "steps": "src/cli.js"
+  },
+  "scripts": {
+    "start": "node src/cli.js",
+    "test": "node src/cli.js test"
+  },
+  "keywords": [
+    "steps",
+    "tracker",
+    "tasks",
+    "goals",
+    "cli",
+    "productivity"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "dependencies": {}
+}

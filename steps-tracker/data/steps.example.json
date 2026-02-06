@@ -1,0 +1,42 @@
+{
+  "project": "Example Project",
+  "steps": [
+    {
+      "id": 1,
+      "description": "Set up development environment",
+      "completed": true,
+      "createdAt": "2026-02-06T07:00:00.000Z",
+      "completedAt": "2026-02-06T07:30:00.000Z"
+    },
+    {
+      "id": 2,
+      "description": "Design project architecture",
+      "completed": true,
+      "createdAt": "2026-02-06T07:05:00.000Z",
+      "completedAt": "2026-02-06T08:00:00.000Z"
+    },
+    {
+      "id": 3,
+      "description": "Implement core functionality",
+      "completed": false,
+      "createdAt": "2026-02-06T07:10:00.000Z",
+      "completedAt": null
+    },
+    {
+      "id": 4,
+      "description": "Write tests",
+      "completed": false,
+      "createdAt": "2026-02-06T07:15:00.000Z",
+      "completedAt": null
+    },
+    {
+      "id": 5,
+      "description": "Documentation",
+      "completed": false,
+      "createdAt": "2026-02-06T07:20:00.000Z",
+      "completedAt": null
+    }
+  ],
+  "createdAt": "2026-02-06T07:00:00.000Z",
+  "lastModified": "2026-02-06T08:00:00.000Z"
+}

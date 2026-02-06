@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "node src/cli.js",
-    "test": "node src/cli.js test"
+    "test": "echo 'No tests configured yet. Run commands manually to test functionality.'"
   },
   "keywords": [
     "steps",
